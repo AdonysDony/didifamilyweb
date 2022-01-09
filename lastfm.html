@@ -11,7 +11,7 @@ $(document).ready(function() {
     $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=AdonysYT&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
         var html = '';
         $.each(json, function(i, item1) {
-            html += "<p><a href=" + item1.name + " target='_blank'>" + item1.name + " - " + "Play count : " +item1.playcount + "</a></p>";
+            html += "<h1>" + item1.name + " target='_blank'>" + item1.name + " - " + "Play count : " +item1.playcount + "</h1>";
         });
         $('#result').append(html);
     });
