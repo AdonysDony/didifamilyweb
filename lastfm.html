@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<title>Get the top artists and their playcounts using last.fm API</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body background="https://cdn.discordapp.com/attachments/617490430677745715/906996130007629824/background.png"></body>
+<body>
+<script>
+$(document).ready(function() {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=AdonysYT&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json, function(i, item1) {
+            html += "<p><a href=" + item1.name + " target='_blank'>" + item1.name + " - " + "Play count : " +item1.playcount + "</a></p>";
+        });
+        $('#result').append(html);
+    });
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=PG59&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json, function(i, item2) {
+            html += "<p><a href=" + item2.name + " target='_blank'>" + item2.name + " - " + "Play count : " +item2.playcount + "</a></p>";
+        });
+        $('#result').append(html);
+    });
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=Frankl1Trempl1&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json, function(i, item3) {
+            html += "<p><a href=" + item3.name + " target='_blank'>" + item3.name + " - " + "Play count : " +item3.playcount + "</a></p>";
+            parseInt(item3.playcount);
+        });
+        $('#result').append(html);
+    });
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=Mehdicament&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json, function(i, item4) {
+            html += "<p><a href=" + item4.name + " target='_blank'>" + item4.name + " - " + "Play count : " +item4.playcount + "</a></p>";
+        });
+        $('#result').append(html);
+    });
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=Blue_Shark59&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json, function(i, item5) {
+            html += "<p><a href=" + item5.name + " target='_blank'>" + item5.name + " - " + "Play count : " +item5.playcount + "</a></p>";
+        });
+        $('#result').append(html);
+    });
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=MusDarioPlay&api_key=4a00c2b832314481e1ee5dcf2c07e0bb&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json, function(i, item6) {
+            html += "<p><a href=" + item6.name + " target='_blank'>" + item6.name + " - " + "Play count : " +item6.playcount + "</a></p>";
+        });
+        $('#result').append(html);
+    });
+    
+});
+</script>
+<div id="result"></div>
+</body>
+</html>
